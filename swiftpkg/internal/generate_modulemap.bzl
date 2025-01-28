@@ -27,8 +27,10 @@ def _generate_modulemap_impl(ctx):
     ]
 
     out_filename = "{}_modulemap/_/module.modulemap1".format(ctx.attr.name)
+    # buildifier: disable=print
     print("Trying to generate " + out_filename)
     fail("This is a simulated failure for testing purposes.")
+    return []
 
     # Check if the output file is already being generated
     if out_filename in ctx.outputs:
