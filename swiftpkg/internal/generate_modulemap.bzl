@@ -26,7 +26,7 @@ def _generate_modulemap_impl(ctx):
         if ModuleMapInfo in dep
     ]
 
-    out_filename = "{}_modulemap/_/module.modulemap".format(ctx.attr.name)
+    out_filename = "{}_modulemap/_/module.modulemap1".format(ctx.attr.name)
     print("Trying to generate " + out_filename)
     fail("This is a simulated failure for testing purposes.")
 
