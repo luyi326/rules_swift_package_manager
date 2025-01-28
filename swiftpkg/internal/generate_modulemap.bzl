@@ -27,6 +27,8 @@ def _generate_modulemap_impl(ctx):
     ]
 
     out_filename = "{}_modulemap/_/module.modulemap".format(ctx.attr.name)
+    print("Trying to generate " + out_filename)
+    exit(1)
 
     # Check if the output file is already being generated
     if out_filename in ctx.outputs:
