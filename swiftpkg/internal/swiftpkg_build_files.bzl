@@ -377,6 +377,7 @@ def _clang_target_build_file(repository_ctx, pkg_ctx, target):
     # See `generate_modulemap.bzl` for details on the modulemap generation.
     # See `//swiftpkg/tests/generate_modulemap_tests` package for a usage
     # example.
+    print("clang src info " + clang_src_info + " " + clang_src_info)
     if clang_src_info.modulemap_path:
         hint_module_map = clang_src_info.modulemap_path
     elif clang_src_info.hdrs:
@@ -410,6 +411,7 @@ def _clang_target_build_file(repository_ctx, pkg_ctx, target):
         child_dep_names.append(modulemap_target_name)
 
         hint_module_map = modulemap_target_name
+        print("Appending " + modulemap_target_name)
     else:
         hint_module_map = None
 
