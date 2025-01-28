@@ -27,6 +27,12 @@ def _generate_modulemap_impl(ctx):
     ]
 
     out_filename = "{}_modulemap/_/module.modulemap".format(ctx.attr.name)
+
+    # Check if the output file is already being generated
+    if out_filename in ctx.outputs:
+        # Skip generating the modulemap if it already exists
+        return []
+
     modulemap_file = ctx.actions.declare_file(out_filename)
 
     hdrs = [
